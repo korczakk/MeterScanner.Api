@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 
 using MeterScanner.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace MeterScanner.Api
 {
@@ -32,6 +33,16 @@ namespace MeterScanner.Api
       {
         options.UseSqlServer(Configuration.GetConnectionString("Default"));
       });
+
+      services.AddIdentity<IdentityUser, IdentityRole>(setup =>
+      {
+        setup.Password.RequireDigit = true;
+        setup.Password.RequiredLength = 8;
+        setup.Password.RequireLowercase = true;
+      })
+        .AddEntityFrameworkStores<MeterScannerDbContext>()
+        .AddDefaultTokenProviders();
+
       services.AddControllers();
     }
 
