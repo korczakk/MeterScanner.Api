@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterScanner.Api", "MeterScanner.Api\MeterScanner.Api.csproj", "{B77F5C2C-A0D5-4327-A7CB-37138B651CE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B77F5C2C-A0D5-4327-A7CB-37138B651CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B77F5C2C-A0D5-4327-A7CB-37138B651CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B77F5C2C-A0D5-4327-A7CB-37138B651CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B77F5C2C-A0D5-4327-A7CB-37138B651CE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {868834F3-7E2E-4CAA-BF4D-E3415BE343C5}
+	EndGlobalSection
+EndGlobal
