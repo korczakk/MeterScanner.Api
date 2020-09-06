@@ -16,5 +16,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MeterScanner.Infrastructure\MeterScanner.Infrastructure.csproj" />
+  </ItemGroup>
+
 
 </Project>
