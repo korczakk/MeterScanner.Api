@@ -14,6 +14,10 @@ using Microsoft.Extensions.Logging;
 using MeterScanner.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text.Unicode;
+using System.Text;
 
 namespace MeterScanner.Api
 {
@@ -42,6 +46,23 @@ namespace MeterScanner.Api
       })
         .AddEntityFrameworkStores<MeterScannerDbContext>()
         .AddDefaultTokenProviders();
+
+      services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+        {
+          options.TokenValidationParameters = new TokenValidationParameters
+          {
+            ValidateAudience = true,
+            ValidAudience = Configuration["Jwt:Audience"],
+            ValidateIssuer = true,
+            ValidIssuer = Configuration["Jwt:Issuer"],
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SecretKey"])),
+            RequireExpirationTime = true,
+            ValidateLifetime = true,
+          };
+        });
+
 
       services.AddControllers();
     }
